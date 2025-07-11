@@ -1,19 +1,38 @@
 // singleton
+// Object.create
 
 // object literals
 
-const JsUser = {
-    name: "souro",
-    "fulname":"sourojit Banerjee",
-    age: 19,
-    locattion: "kolkata",
-    email: "souro@gmail.com",
-    isLoggedIn: false,
-    lastLoginDays:["Thursday","Monday"]
+const mySym = Symbol("key1")
 
+
+const JsUser = {
+    name: "Souro",
+    "full name": "Sourojit",
+    [mySym]: "mykey1",
+    age: 18,
+    location: "Kolkata",
+    email: "Souro@gmail.com",
+    isLoggedIn: false,
+    lastLoginDays: ["Monday", "Saturday"]
 }
 
-console.log(JsUser.email)
-console.log(JsUser["email"])
-console.log(JsUser.fullname)
+// console.log(JsUser.email)
+// console.log(JsUser["email"])
+// console.log(JsUser["full name"])
+// console.log(JsUser[mySym])
 
+JsUser.email = "sourojitbanerjee819@gmail.com"
+// Object.freeze(JsUser)
+JsUser.email = "sourojitgoogle@hegk.com"
+// console.log(JsUser);
+
+JsUser.greeting = function(){
+    console.log("Hello JS user");
+}
+JsUser.greetingTwo = function(){
+    console.log(`Hello JS user, ${this.name}`);
+}
+
+console.log(JsUser.greeting());
+console.log(JsUser.greetingTwo());
