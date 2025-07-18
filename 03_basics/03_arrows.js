@@ -26,6 +26,8 @@ const souroman =  () => {
 // const addTwo = (num1, num2) =>  num1 + num2
 
 // const addTwo = (num1, num2) => ( num1 + num2 )
+// wraped in {} have to use return 
+// wraped in ()do not have to use return
 
 const addTwo = (num1, num2) => ({username: "souro"})
 
